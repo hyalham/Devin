@@ -1,0 +1,95 @@
+RO  Deviner un nombre compris entre 1 et 999 soit choisi par le programme, soit choisi par l'utilisateur 
+
+R1  Comment choisir entre Deviner, Faire deviner ou quitter?
+    Comment deviner un nombre choisi par le programme?
+    Comment faire deviner un nombre au programme?
+
+R1  Comment deviner un nombre choisi par le programme?
+  	 	Choisir un nombe mystère
+		        nb_test =0
+		        rang_propo = 1
+		        while nb_test != nb_myst:
+		Demander un nombre en donnant le rang de la proposition
+		Répondre par "plus grand" "plus petit" ou "trouvé"
+
+R1  Comment deviner un nombre?
+        Demander à l'itilisateur de choisir un nombre.
+                input('Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ?')
+        Définir une condition de répetition de demande.
+                while error == False and stop == False:
+        Calculer la valeur médiane de l'intervale courant
+        Verifier si le nombre est trouvé
+        Donner au programme l'information "plus petit", "plus grand".
+        Executer une action pour chacune options (plus grand, plus petit, trouvé ou erreur).
+
+R2  Comment choisir entre Deviner, Faire deviner ou quitter?
+        Afficher un menu pour 1-Deviner, 2-Faire deviner ou 0-Quitter
+        Executer l'action choisie
+
+R2  Comment choisir un nombre mystère?
+   		Définir les variable nb_test et rang_propo
+		Utiliser une randomisation    
+			nb_myst = random.randint(1,999)
+		
+R2	Comment demander un nombre en donnant le rang de la proposition?
+			nb_test = int(input(f'Proposition {rang_propo}  '))
+			rang_propo += 1
+
+R2  Comment calculer la valeur médiane de l'intervale courant?
+        machine_number = int((up + down) / 2)
+
+R2  Comment verifier si le nombre est trouvé?
+        if user_number == machine_number :
+        print()
+        print(f"Trouvé {user_number}")
+        stop = True
+
+R2  Comment donner au programme l'information "plus grand" "plus petit"?
+        input("Trop (g)rand, trop (p)etit ou (t)rouvé ?")
+
+
+R3  Comment Répondre par "plus grand" "plus petit" ou "trouvé"?
+		if nb_test > nb_myst:
+				print("C'est plus petit")
+		elif nb_test < nb_myst:
+				print("C'est plus grand")
+		else:
+				print("Trouvé!!!")
+R3  Comment executer une action pour chacune des 2 propositions?
+        Pour un rang superieur, verifier s'il qu'il n'y a pas d'erreur et changer les bornes
+                if rang == 'g' and user_number > machine_number :
+                        down = machine_number + 1
+        Pour un rang inferieur, verifier qu'il n'y a pas d'erreur et changer les bornes
+                elif rang == 'p' and user_number < machine_number:
+                        up = machine_number - 1
+                else :
+                        error = True
+                        print("Tu as triché")
+        Si le nombe est trouvé
+                elif rang == 't':
+                        print(f"J'ai trouvé en {rang_propo} essais.")
+                        print()
+                        stop = True
+        S'il y a une erreur
+                else :
+                        print("Je n'ai pas compris la réponse. Merci de répondre :")
+                        print("g si ma proposition est trop grande")
+                        print("p si ma proposition est trop petite")
+                        print("t si j'ai trouvé le nombre")
+                        rang_propo -= 1
+
+R3  Comment afficher un menu pour 1-Deviner ou 2-Faire deviner ou "0-Quitter"?
+        choix = '0'
+        print("1. L'ordinateur choisit un nombre et vous le devinez")
+        print("2. Vous choisissez un nombre et l'ordinateur le devine")
+        print("0. Quitter le programme")
+        choix = input("Votre choix : ")
+
+R3  Comment executer l'action choisie
+        while choix != '1' or '2':
+            if choix == '1':
+                pass
+            elif choix == '2' :
+                pass
+            elif choix != '1' or '2':
+

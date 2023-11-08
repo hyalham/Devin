@@ -1,0 +1,47 @@
+RO  Deviner un nombre compris entre 1 et 999 choisi l'utilisateur 
+        Comment faire deviner un nombre au programme?
+
+R1  Comment deviner un nombre?
+        Demander à l'itilisateur de choisir un nombre.
+                input('Avez-vous choisi un nombre compris entre 1 et 999 (o/n) ?')
+        Définir une condition de répetition de demande.
+                while error == False and stop == False:
+        Calculer la valeur médiane de l'intervale courant
+        Verifier si le nombre est trouvé
+        Donner au programme l'information "plus petit", "plus grand".
+        Executer une action pour chacune options (plus grand, plus petit, trouvé ou erreur).
+
+R2  Comment calculer la valeur médiane de l'intervale courant?
+        machine_number = int((up + down) / 2)
+
+R2  Comment verifier si le nombre est trouvé?
+        if user_number == machine_number :
+        print()
+        print(f"Trouvé {user_number}")
+        stop = True
+
+R2  Comment donner au programme l'information "plus grand" "plus petit"?
+        input("Trop (g)rand, trop (p)etit ou (t)rouvé ?")
+
+R3  Comment executer une action pour chacune des 2 propositions?
+        Pour un rang superieur, verifier s'il qu'il n'y a pas d'erreur et changer les bornes
+                if rang == 'g' and user_number > machine_number :
+                        down = machine_number + 1
+        Pour un rang inferieur, verifier qu'il n'y a pas d'erreur et changer les bornes
+                elif rang == 'p' and user_number < machine_number:
+                        up = machine_number - 1
+                else :
+                        error = True
+                        print("Tu as triché")
+        Si le nombe est trouvé
+                elif rang == 't':
+                        print(f"J'ai trouvé en {rang_propo} essais.")
+                        print()
+                        stop = True
+        S'il y a une erreur
+                else :
+                        print("Je n'ai pas compris la réponse. Merci de répondre :")
+                        print("g si ma proposition est trop grande")
+                        print("p si ma proposition est trop petite")
+                        print("t si j'ai trouvé le nombre")
+                        rang_propo -= 1

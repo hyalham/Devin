@@ -1,0 +1,28 @@
+RO  Deviner un nombre compris entre 1 et 999 choisi par le programme
+
+R1  Comment deviner un nombre choisi par le programme?
+  	 	Choisir un nombe mystère
+		nb_test =0
+		rang_propo = 1
+		while nb_test != nb_myst:
+		Demander un nombre en donnant le rang de la proposition
+		Répondre par "plus grand" "plus petit" ou "trouvé"
+   	 
+R2  Comment choisir un nombre mystère?
+   		Définir les variable nb_test et rang_propo
+		Utiliser une randomisation    
+			nb_myst = random.randint(1,999)
+		
+R2	Comment demander un nombre en donnant le rang de la proposition?
+			nb_test = int(input(f'Proposition {rang_propo}  '))
+			rang_propo += 1
+		
+R3  Comment Répondre par "plus grand" "plus petit" ou "trouvé"?
+		if nb_test > nb_myst:
+				print("C'est plus petit")
+		elif nb_test < nb_myst:
+				print("C'est plus grand")
+		else:
+				print("Trouvé!!!")
+
+
