@@ -55,7 +55,7 @@ while choix != '0':
         while not stop :
             # Calculer la valeur mediane de cet intervale
             rang_propo += 1
-            machine_number = int((up + down) / 2)
+            machine_number = int((up + down) // 2)
             # Indiquer si le nombre proposé est trop grand, trop petit outrouvé
             print()
             print(f"Proposition {rang_propo} : {machine_number}")
